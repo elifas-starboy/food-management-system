@@ -24,3 +24,13 @@ a {
   max-width: 80%;
   margin: auto;
 }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
