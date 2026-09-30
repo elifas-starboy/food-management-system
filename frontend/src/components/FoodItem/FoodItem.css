@@ -43,3 +43,35 @@
     font-weight: 500;
     margin: 1rem 0;
 }
+
+.food-item-container {
+    position: relative;
+}
+
+.food-item-container .add {
+    width: 35px;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 15px;
+    border-radius: 50%;
+}
+
+.food-item-counter {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 6px;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.food-item-counter img {
+    width: 30px;
+}
+
+.food-item-counter p {
+    font-size: 1.6rem;
+}
