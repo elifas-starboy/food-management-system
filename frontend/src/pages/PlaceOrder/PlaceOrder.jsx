@@ -1,11 +1,7 @@
-import './PlaceOrder.css';
+import "./PlaceOrder.css";
 
 function PlaceOrder() {
-    return (
-        <div>
-
-        </div>
-    );
+  return <form className="place-order"></form>;
 }
 
 export default PlaceOrder;
