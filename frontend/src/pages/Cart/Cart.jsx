@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { Fragment, useContext } from "react";
 import "./Cart.css";
 import { StoreContext } from "../../context/StoreContext";
 
 function Cart() {
-  const { cartItems, food_list, removeFromCard } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCard, getTotalCartAmount } =
+    useContext(StoreContext);
 
   return (
     <div className="cart">
@@ -18,10 +19,10 @@ function Cart() {
         </div>
         <br />
         <hr />
-        {food_list.map((item, index) => {
+        {food_list.map((item) => {
           if (cartItems[item._id] > 0) {
             return (
-              <>
+              <Fragment key={item._id}>
                 <div className="cart-items-title cart-items-item">
                   <img src={item.image} alt="item image" />
                   <p>{item.name}</p>
@@ -33,9 +34,10 @@ function Cart() {
                   </p>
                 </div>
                 <hr />
-              </>
+              </Fragment>
             );
           }
+          return null;
         })}
       </div>
       <div className="cart-bottom">
@@ -44,17 +46,17 @@ function Cart() {
           <div>
             <div className="cart-total-detials">
               <p>Subtotal</p>
-              <p>{0}</p>
+              <p>N$ {getTotalCartAmount()}</p>
             </div>
             <hr />
             <div className="cart-total-detials">
               <p>Delivery Fee</p>
-              <p>{2}</p>
+              <p>N$ {2}</p>
             </div>
             <hr />
             <div className="cart-total-detials">
               <b>Total</b>
-              <b>{0}</b>
+              <b>{getTotalCartAmount() + 2}</b>
             </div>
           </div>
           <button>PROCEED TO CHECKOUT</button>
