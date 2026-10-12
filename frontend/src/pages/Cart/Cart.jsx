@@ -54,12 +54,12 @@ function Cart() {
             <hr />
             <div className="cart-total-detials">
               <p>Delivery Fee</p>
-              <p>N$ {2}</p>
+              <p>N$ {getTotalCartAmount() === 0 ? 0 : 2}</p>
             </div>
             <hr />
             <div className="cart-total-detials">
               <b>Total</b>
-              <b>{getTotalCartAmount() + 2}</b>
+              <b>{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
             </div>
           </div>
           <button
